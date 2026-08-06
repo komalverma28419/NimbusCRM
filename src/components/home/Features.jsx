@@ -4,7 +4,7 @@ import Title from "../ui/Title";
 
 const Features = () => {
   return (
-    <section id="features"className="py-6 md:py-10 xl:py-14  bg-white">
+    <section id="features"className="py-6 md:py-10 xl:py-14 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         
         <Title text="Everything you need to manage your leads"/>

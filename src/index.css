@@ -14,3 +14,38 @@
   --color-secondary: #EFA434;
 }
 
+.wave-border {
+  position: absolute;
+  inset: -40%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg,
+    transparent 70deg,
+    rgba(59,130,246,0.95) 95deg,
+    rgba(19,63,227,0.95) 120deg,
+    rgba(242,5,92,0.95) 145deg,
+    transparent 170deg,
+    transparent 360deg
+  );
+
+  filter: blur(10px);
+
+  animation: waveBorderSpin 2.6s linear infinite;
+  animation-play-state: paused; /* Initially stop */
+  opacity: 0;                   /* Hide initially */
+  transition: opacity 0.3s ease;
+}
+
+.group:hover .wave-border {
+  animation-play-state: running; /* Start on hover */
+  opacity: 1;                    /* Show on hover */
+}
+
+@keyframes waveBorderSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
