@@ -12,7 +12,7 @@ const Navbar = () => {
 
   const handleClose = () => {
     setIsOpen(false);
-  };
+  }
 
   useEffect(() => {
     const handleClick = (e) => {
@@ -26,13 +26,15 @@ const Navbar = () => {
   }, [])
 
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200/70 bg-white/80 backdrop-blur-xl">
-      <div className="max-w-7xl mx-auto flex items-center justify-between px-6 lg:px-12 py-3">
+    <header className="sticky top-0 z-50 w-full border-b border-gray-200/70 bg-white/80 backdrop-blur-xl">
+      <div className="max-w-7xl mx-auto h-20 px-6 lg:px-12 flex items-center justify-between">
+        
+        <a href="#hero">
+          <img src={logo} alt="NimbusCRM" className="h-10 lg:h-12 object-contain"/>
+        </a>
 
-      
-        <a href="#hero"><img src={logo} alt="NimbusCRM" className="h-10 lg:h-12 object-contain"/></a>
-
-        <nav className="hidden md:block">
+        {/* Desktop Nav */}
+        <nav className="hidden md:flex items-center gap-8">
           <ul className="flex items-center gap-8">
             {navItems.map((item) => (
               <li key={item.name}>
@@ -45,45 +47,53 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
+          <Button text="Start Free Trial" />
         </nav>
 
-        <div className="hidden md:block">
-          <a href="#hero"><Button text="Start Free Trial" /></a>
+        {/* Mobile Menu */}
+        <div className="block md:hidden" ref={menuRef}>
+          <button
+            onClick={toggleMenu}
+            className="cursor-pointer"
+            aria-label="Menu"
+          >
+            {isOpen ? <X size={28} /> : <Menu size={28} />}
+          </button>
         </div>
+      </div>
 
-        <div className="md:hidden relative" ref={menuRef}>
-          <button onClick={toggleMenu}>{isOpen ? <X size={28} /> : <Menu size={28} />}</button>
+      <div
+        className={`md:hidden w-full bg-white border-t border-gray-200 shadow-lg transition-all duration-300 overflow-hidden ${
+          isOpen
+            ? "max-h-96 opacity-100 py-4"
+            : "max-h-0 opacity-0 py-0 pointer-events-none"
+        }`}
+      >
+        <nav className="px-6">
+          <ul className="flex flex-col gap-4">
+            {navItems.map((item) => (
+              <li key={item.name}>
+                <a
+                  href={item.path}
+                  onClick={handleClose}
+                  className="block py-2 font-medium text-gray-700 transition-colors duration-300 hover:text-violet-600"
+                >
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-          <div
-            className={`absolute right-0 top-14 w-64 rounded-2xl bg-white shadow-xl border border-gray-100 transition-all duration-300 overflow-hidden
-            ${isOpen ? "opacity-100 translate-y-0" : "opacity-0 pointer-events-none -translate-y-2"}`}>
-            <nav className="p-5">
-              <ul className="space-y-4">
-                {navItems.map((item) => (
-                  <li key={item.name}>
-                    <a
-                      href={item.path}
-                      onClick={handleClose}
-                      className="block font-medium text-gray-700 hover:text-violet-600"
-                    >
-                      {item.name}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-
-              <a href="#hero" onClick={handleClose}>
-                <Button
-                  text="Start Free Trial"
-                  className="w-full mt-6 justify-center"
-                />
-              </a>
-            </nav>
+          <div className="pt-5">
+            <Button
+              text="Start Free Trial"
+              className="w-full justify-center"
+            />
           </div>
-        </div>
+        </nav>
       </div>
     </header>
   )
 }
 
-export default Navbar;
+export default Navbar

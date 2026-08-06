@@ -15,7 +15,7 @@ const Footer = () => {
           </a>
 
           <nav>
-            <ul className=" flex flex-wrap justify-center gap-x-8 gap-y-4 text-sm font-medium
+            <ul className=" flex flex-wrap justify-center gap-x-4 md:gap-x-8 gap-y-3 text-sm font-medium
              text-gray-600">
               {footerLinks.map((item) => (
                 <li key={item.name}>
