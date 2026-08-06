@@ -98,12 +98,12 @@ const Button = ({
   };
 
   const variants = {
-    primary: ` bg-violet-600 text-white shadow-sm hover:bg-violet-700 hover:-translate-y-0.5`,
+    primary: `bg-violet-600 text-white shadow-sm hover:bg-violet-700 hover:-translate-y-0.5`,
 
     secondary: ` bg-white text-gray-900 border border-gray-300 shadow-sm hover:border-secondary
     hover:bg-secondary/90 hover:text-white hover:text-secondary hover:-translate-y-0.5 hover:shadow-md`,
     
-    ghost: `bg-transparent text-gray-700 hover:bg-gray-100 hover:text-violet-600`,
+    tertiary: `bg-white text-gray-700 hover:bg-gray-100 hover:text-violet-600`,
   }
 
   return (
@@ -111,7 +111,7 @@ const Button = ({
       type={type}
       onClick={onClick}
       disabled={disabled}
-      className={`${baseStyle} ${sizes[size]} ${variants[variant]} ${className}`}
+      className={`${className} ${baseStyle} ${sizes[size]} ${variants[variant]} `}
       {...props}
     >
       {icon && iconPosition === "left" && (
