@@ -21,12 +21,12 @@ const Navbar = () => {
       }
     }
 
-    document.addEventListener("mousedown", handleClick);
-    return () => document.removeEventListener("mousedown", handleClick);
+    document.addEventListener("pointerdown", handleClick);
+    return () => document.removeEventListener("pointerdown", handleClick);
   }, [])
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-gray-200/70 bg-white/80 backdrop-blur-xl">
+    <header ref={menuRef} className="sticky top-0 z-50 w-full border-b border-gray-200/70 bg-white/80 backdrop-blur-xl">
       <div className="max-w-7xl mx-auto h-20 px-6 lg:px-12 flex items-center justify-between">
         
         <a href="#hero">
@@ -54,7 +54,7 @@ const Navbar = () => {
         </div>
 
         {/* Mobile Menu */}
-        <div className="block md:hidden" ref={menuRef}>
+        <div className="block md:hidden">
           <button
             onClick={toggleMenu}
             className="cursor-pointer"

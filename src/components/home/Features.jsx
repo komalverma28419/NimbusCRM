@@ -24,18 +24,19 @@ const Features = () => {
                     delay: index * 0.12,
                     ease: "easeOut",
                   }}
-                  className=" group relative overflow-hidden rounded-3xl border border-secondary/25 bg-white
-                p-7 transition-all duration-500 hover:-translate-y-3 hover:border-violet-300 
-                hover:shadow-2xl  hover:shadow-violet-100 ">
+                  className="group relative overflow-hidden rounded-3xl border border-secondary/25 bg-white
+                  p-7 transition-all duration-500 hover:-translate-y-3 hover:border-violet-300 
+                  hover:shadow-2xl hover:shadow-violet-100 ">
 
                 {/* Animated Top Border */}
-                <div className=" absolute left-0 top-0 h-0.5 sm:h-1 w-0 bg-linear-to-r from-violet-600
+                <div className="absolute left-0 top-0 h-0.5 sm:h-1 w-0 bg-linear-to-r from-violet-600
                   to-blue-600 transition-all duration-500 group-hover:w-full "/>
 
-                <div className=" relative flex h-11 w-11 sm:h-13 sm:w-13 items-center justify-center rounded-xl border
+                <div className="relative flex h-11 w-11 sm:h-13 sm:w-13 items-center justify-center rounded-xl border
                   border-violet-100 bg-white shadow-md transition-all duration-300 group-hover:-translate-y-1
                   group-hover:border-violet-300 group-hover:shadow-xl group-hover:shadow-violet-200/40">
 
+                   {/* //icon-box overlay// */}
                   <div className="absolute inset-0 rounded-xl bg-linear-to-br from-violet-600
                     to-blue-600/10 opacity-0 transition-opacity duration-300 group-hover:opacity-100"/>
                     <Icon className="text-primary w-5 h-6 sm:w-7 sm:h-7"/>
