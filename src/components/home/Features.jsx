@@ -1,6 +1,7 @@
-import React from "react";
-import { features } from "../../data/featureData";
-import Title from "../ui/Title";
+import React from "react"
+import { features } from "../../data/featureData"
+import Title from "../ui/Title"
+import { motion } from "framer-motion"
 
 const Features = () => {
   return (
@@ -10,12 +11,20 @@ const Features = () => {
         <Title text="Everything you need to manage your leads"/>
 
         <div className=" mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature) => {
+          {features.map((feature, index) => {
             const Icon = feature.icon
             return (
-              <div
-                key={feature.title}
-                className=" group relative overflow-hidden rounded-3xl border border-secondary/25 bg-white
+              <motion.div
+                  key={feature.title}
+                  initial={{ opacity: 0, y: 40 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, amount: 0.3 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: index * 0.12,
+                    ease: "easeOut",
+                  }}
+                  className=" group relative overflow-hidden rounded-3xl border border-secondary/25 bg-white
                 p-7 transition-all duration-500 hover:-translate-y-3 hover:border-violet-300 
                 hover:shadow-2xl  hover:shadow-violet-100 ">
 
@@ -41,7 +50,7 @@ const Features = () => {
                 <p className="mt-1 text-gray-600 md:text-base text-sm">
                   {feature.description}
                 </p>
-              </div>
+              </motion.div>
             )
           })}
         </div>

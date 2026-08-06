@@ -3,10 +3,22 @@ import { FaInstagram, FaLinkedin, FaTwitter } from "react-icons/fa";
 
 
 export const footerLinks = [
-  "Product",
-  "Pricing",
-  "About",
-  "Contact",
+  {
+    name: "Product",
+    link: "#hero",
+  },
+  {
+    name: "Features",
+    link: "#features",
+  },
+  {
+    name: "Pricing",
+    link: "#pricing",
+  },
+  {
+    name: "Testimonials",
+    link: "#testimonials",
+  },
 ];
 
 

@@ -1,7 +1,7 @@
-import React from "react";
-import Title from "../../ui/Title";
-import { plans } from "../../../data/pricingData";
-import PricingCard from "./PricingCard";
+import React from "react"
+import Title from "../../ui/Title"
+import { plans } from "../../../data/pricingData"
+import PricingCard from "./PricingCard"
 
 
 const Pricing = () => {
@@ -13,8 +13,8 @@ const Pricing = () => {
        <Title text="Everything you need to manage your leads"/>
         <div
           className="mt-12 grid lg:grid-cols-3 gap-6 ">
-          {plans.map((plan) =>(
-            <PricingCard key={plan.title} plan={plan}/>
+          {plans.map((plan, index) =>(
+            <PricingCard key={plan.title} plan={plan} index={index}/>
           ))}
         </div>
 

@@ -4,7 +4,9 @@
 *{
     font-family: 'Poppins', sans-serif;
 }
-
+html {
+  scroll-behavior: smooth;
+}
 
 @theme{
   --color-dark: #1A1A1A;

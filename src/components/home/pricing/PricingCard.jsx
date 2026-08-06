@@ -1,13 +1,23 @@
-import React from "react";
-import { Check } from "lucide-react";
-import Button from "../../ui/Button";
+import React from "react"
+import { Check } from "lucide-react"
+import Button from "../../ui/Button"
+import { motion } from "framer-motion"
 
-const PricingCard = ({ plan }) => {
+const PricingCard = ({ plan , index}) => {
   const isHighlighted = plan.title === "Growth";
 
   return (
-    <div
-      className={`group relative overflow-hidden rounded-3xl border p-8 transition-all duration-500
+    <motion.div
+        initial={{ opacity: 0, y: 60, scale: 0.96 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: true, amount: 0.3 }}
+        transition={{
+            duration: 0.6,
+            delay: index * 0.15,
+            ease: "easeOut",
+        }}
+
+        className={`group relative overflow-hidden rounded-3xl border p-8 transition-all duration-500
         hover:-translate-y-2 hover:shadow-2xl
         ${
           isHighlighted
@@ -54,7 +64,7 @@ const PricingCard = ({ plan }) => {
 
         <Button text="Start Free Trial" variant={isHighlighted ? "tertiary" : "primary"}
         className="mt-10 w-full justify-center"/>
-    </div>
+    </motion.div>
   )
 }
 export default PricingCard;

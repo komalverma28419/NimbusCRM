@@ -1,9 +1,19 @@
-import React from "react";
-import { Quote } from "lucide-react";
+import React from "react"
+import { Quote } from "lucide-react"
+import { motion } from "framer-motion"
 
-const TestimonialCard = ({ item }) => {
+const TestimonialCard = ({ item, index }) => {
   return (
-    <div className="group relative rounded-3xl p-0.5 border border-gray-200 overflow-hidden">
+    <motion.div 
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{
+        duration: 0.6,
+        delay: index * 0.15,
+        ease: "easeOut",
+      }}
+    className="group relative rounded-3xl p-0.5 border border-gray-200 overflow-hidden">
       
       {/* Animated Border */}
       <div className="wave-border absolute inset-[-50%]"></div>
@@ -27,7 +37,7 @@ const TestimonialCard = ({ item }) => {
 
       </div>
 
-    </div>
+    </motion.div>
   )
 }
 

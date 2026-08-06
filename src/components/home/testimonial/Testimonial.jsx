@@ -11,8 +11,8 @@ const Testimonials = () => {
         <Title text="Loved by small business owners"/>
 
         <div className=" mt-10 grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-          {testimonials.map((item) =>(
-            <TestimonialCard key={item.id} item={item}/>
+          {testimonials.map((item, index) =>(
+            <TestimonialCard key={item.id} item={item} index={index}/>
           ))}
         </div>
 
