@@ -43,8 +43,9 @@ const Hero = () => {
             whileInView={{ opacity: 1, y: 0, scale: 1 }}
             viewport={{ once: true }}
             transition={{ delay: 0.4, duration: 0.6 }}
-            className=" mt-6">
-              <Button text="Book a Demo"variant="primary"/>
+            className="flex items-center justify-center flex-col sm:flex-row  mt-6 gap-4 w-full">
+              <Button text="Start Free Trial"variant="primary" className="w-full sm:w-auto"/>
+              <Button text="Book a Demo" variant="secondary" className="w-full sm:w-auto"/>
           </motion.div>
 
         </div>

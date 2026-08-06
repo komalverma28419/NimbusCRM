@@ -47,8 +47,11 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
-          <Button text="Start Free Trial" />
+          
         </nav>
+        <div className="md:block hidden ">
+          <Button text="Start Free Trial" />
+        </div>
 
         {/* Mobile Menu */}
         <div className="block md:hidden" ref={menuRef}>
@@ -84,7 +87,7 @@ const Navbar = () => {
             ))}
           </ul>
 
-          <div className="pt-5">
+          <div className="pt-5 flex flex-col md:flex-row gap-4">
             <Button
               text="Start Free Trial"
               className="w-full justify-center"
